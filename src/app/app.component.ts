@@ -10,11 +10,14 @@ export class AppComponent {
 
   items: MenuItem[] = [
     {
+      icon: PrimeIcons.HOME, routerLink: ['']
+    },
+    {
       label: "Biblioteca", icon: PrimeIcons.BOOK,
       items: 
         [
-          { label: "Libros", icon: PrimeIcons.BOOKMARK },
-          { label: "Autores", icon: PrimeIcons.USERS }
+          { label: "Libros", icon: PrimeIcons.BOOKMARK, routerLink: ['libros'] },
+          { label: "Autores", icon: PrimeIcons.USERS, routerLink: ['autores'] }
         ]
     }
   ];
