@@ -10,6 +10,7 @@ import { LibrosService } from 'src/app/servicios/libros.service';
 })
 export class FormularioLibroComponent implements OnInit {
 
+  idactual: number = 0;
   codigo: number | null = null;
   titulo: string | null = null;
   autor: string | null = null;
@@ -59,19 +60,19 @@ export class FormularioLibroComponent implements OnInit {
     this.servicioLibros.post(libro).subscribe({
       next: () => {
         this.guardando = false;
-        this.mensajes = [{severity: 'success', summary: 'Éxito', detail: 'Se registró el libro.'}];
+        this.mensajes = [{severity: 'success', summary: 'Éxito.', detail: 'Se registró el libro.'}];
         this.recargarLibros.emit(true);
       },
       error: (e) => {
         this.guardando = false;
-        this.mensajes = [{severity: 'error', summary: 'Érror al registrar', detail: e.error}];
+        this.mensajes = [{severity: 'error', summary: 'Érror al registrar.', detail: e.error}];
       }
     });
   }
 
   private editar(libro: Libro){
     this.guardando = true;
-    this.servicioLibros.put(libro).subscribe({
+    this.servicioLibros.put(libro, this.idactual).subscribe({
       next: () => {
         this.guardando = false;
         this.mensajes = [{severity: 'success', summary: 'Éxito.', detail: 'Se editó el libro.'}]
