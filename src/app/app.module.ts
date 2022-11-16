@@ -20,6 +20,9 @@ import { MessagesModule } from 'primeng/messages';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { DropdownModule } from 'primeng/dropdown';
+import { LoginComponent } from './login/login.component';
+import { MainAppComponent } from './main-app/main-app.component';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,8 @@ import { DropdownModule } from 'primeng/dropdown';
     LibrosComponent,
     AutoresComponent,
     FormularioLibroComponent,
+    LoginComponent,
+    MainAppComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { DropdownModule } from 'primeng/dropdown';
     MessageModule,
     MessagesModule,
     ConfirmDialogModule,
-    DropdownModule
+    DropdownModule,
+    PasswordModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
